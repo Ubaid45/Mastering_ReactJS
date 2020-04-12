@@ -26,14 +26,16 @@ class Movies extends Component {
     this.setState({ movies });
   };
 
-  handleGenreSelect = () => {};
+  handleGenreSelect = (genre) => {
+    this.setState({ selectedGenre: genre });
+  };
 
   handlePageChange = (page) => {
     this.setState({ currentPage: page });
   };
 
   handleDelete = (movie) => {
-    console.log(movie);
+    //console.log(movie);
     const movies = this.state.movies.filter((m) => m._id !== movie._id);
     this.setState({ movies });
   };
@@ -49,8 +51,7 @@ class Movies extends Component {
         <div className="col-2">
           <ListGroup
             items={this.state.genres}
-            textProperty="name"
-            valueProperty="_id"
+            selectedItem={this.state.selectedGenre}
             onItemSelect={this.handleGenreSelect}
           />
         </div>
