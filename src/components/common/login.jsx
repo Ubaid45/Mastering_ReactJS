@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 class Login extends Component {
+  userName = React.createRef();
   handleSubmit = (e) => {
     e.preventDefault(); // prevent the default bahviour. Submitting the page to server which cause a full reload
     // Call the server, save the changes ad redirects the user
-    console.log("submit");
+    const userName = this.userName.current.value;
+    console.log("username : " + userName);
   };
   render() {
     return (
@@ -12,7 +14,13 @@ class Login extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
-            <input id="username" type="text" className="form-control" />
+            <input
+              ref={this.userName}
+              autoFocus
+              id="username"
+              type="text"
+              className="form-control"
+            />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
