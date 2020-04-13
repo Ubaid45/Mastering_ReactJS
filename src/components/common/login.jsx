@@ -31,18 +31,16 @@ class Login extends Component {
     const errors = this.validate();
     this.setState({ errors: errors || {} });
     if (errors) return;
-    // Call the server, save the changes ad redirects the user
+    // Call the server, save the changes and redirects the user
     //const userName = this.userName.current.value;
     console.log("submitted");
   };
 
-  validateProperty = (input) => {
-    if (input.name === "username") {
-      if (input.value.trim() === "") return "Username is required.";
-    }
-    if (input.name === "password") {
-      if (input.value.trim() === "") return "Password is required.";
-    }
+  validateProperty = (name, value) => {
+    const obj = { [name]: value };
+    const schema = { [name]: this.schema[name] };
+    const { error } = Joi.validate(obj, schema);
+    return error ? error.details[0].message : null;
   };
 
   handleChange = ({ currentTarget: input }) => {
