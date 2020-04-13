@@ -9,6 +9,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import MovieForm from './components/movieForm';
+import Login from './components/common/login';
 
 class App extends Component {
   render() { 
@@ -17,6 +18,7 @@ class App extends Component {
       <NavBar />
       <main className="container">
         <Switch>
+        vv<Route path="/login" component={Login}></Route>
           <Route path="/movies/:id" component={MovieForm}></Route>
           <Route path="/movies" component={Movies}></Route>
           <Route path="/customers" component={Customers}></Route>
