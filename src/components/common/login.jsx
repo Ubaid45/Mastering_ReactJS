@@ -16,6 +16,7 @@ class Login extends Component {
       errors.password = "Password is required.";
     return Object.keys(errors).length === 0 ? null : errors;
   };
+
   handleSubmit = (e) => {
     e.preventDefault(); // prevent the default bahviour. Submitting the page to server which cause a full reload
 
@@ -27,10 +28,27 @@ class Login extends Component {
     console.log("submitted");
   };
 
+  validateProperty = (input) => {
+    if (input.name === "username") {
+      if (input.value.trim() === "") return "Username is required.";
+    }
+    if (input.name === "password") {
+      if (input.value.trim() === "") return "Password is required.";
+    }
+  };
+
   handleChange = ({ currentTarget: input }) => {
+    const errors = { ...this.state.errors };
+    //console.log("error : " + errors[input.name]);
+
+    const errorMessage = this.validateProperty(input);
+    //console.log("error message: " + errorMessage);
+    if (errorMessage) errors[input.name] = errorMessage;
+    else delete errors[input.name];
+
     const account = { ...this.state.account };
     account[input.name] = input.value;
-    this.setState({ account });
+    this.setState({ account, errors });
   };
 
   render() {
@@ -43,6 +61,7 @@ class Login extends Component {
             name="username"
             label="Username"
             value={account.username}
+            type="text"
             error={errors.username}
             onChange={this.handleChange}
           />
@@ -50,6 +69,7 @@ class Login extends Component {
             name="password"
             label="Password"
             value={account.password}
+            type="password"
             error={errors.password}
             onChange={this.handleChange}
           />
