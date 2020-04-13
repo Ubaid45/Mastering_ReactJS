@@ -36,7 +36,7 @@ class Login extends Component {
     console.log("submitted");
   };
 
-  validateProperty = (name, value) => {
+  validateProperty = ({ name, value }) => {
     const obj = { [name]: value };
     const schema = { [name]: this.schema[name] };
     const { error } = Joi.validate(obj, schema);
@@ -79,7 +79,9 @@ class Login extends Component {
             error={errors.password}
             onChange={this.handleChange}
           />
-          <button className="btn btn-primary">Login</button>
+          <button disabled={this.validate()} className="btn btn-primary">
+            Login
+          </button>
         </form>
       </div>
     );
