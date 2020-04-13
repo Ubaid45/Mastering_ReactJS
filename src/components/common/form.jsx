@@ -16,10 +16,8 @@ class Form extends Component {
 
   handleChange = ({ currentTarget: input }) => {
     const errors = { ...this.state.errors };
-    //console.log("error : " + errors[input.name]);
 
     const errorMessage = this.validateProperty(input);
-    //console.log("error message: " + errorMessage);
     if (errorMessage) errors[input.name] = errorMessage;
     else delete errors[input.name];
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Joi from "joi-browser";
 import Form from "./form";
-class Login extends Form {
+class LoginForm extends Form {
   state = {
     data: { username: "", password: "" },
     errors: {},
@@ -30,4 +30,4 @@ class Login extends Form {
     );
   }
 }
-export default Login;
+export default LoginForm;
