@@ -3,10 +3,26 @@ import Input from "./input";
 class Login extends Component {
   state = {
     account: { username: "", password: "" },
+    errors: {},
   };
 
+  validate = () => {
+    const errors = {};
+
+    const { account } = this.state;
+    if (account.username.trim() === "")
+      errors.username = "Username is required.";
+    if (account.password.trim() === "")
+      errors.password = "Password is required.";
+    return Object.keys(errors).length === 0 ? null : errors;
+  };
   handleSubmit = (e) => {
     e.preventDefault(); // prevent the default bahviour. Submitting the page to server which cause a full reload
+
+    const errors = this.validate();
+    console.log(errors);
+    this.setState({ errors });
+    if (errors) return;
     // Call the server, save the changes ad redirects the user
     //const userName = this.userName.current.value;
     console.log("submitted");
@@ -27,14 +43,12 @@ class Login extends Component {
           <Input
             name="username"
             label="Username"
-            type="text"
             value={account.username}
             onChange={this.handleChange}
           />
           <Input
             name="password"
             label="Password"
-            type="password"
             value={account.password}
             onChange={this.handleChange}
           />
