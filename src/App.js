@@ -8,6 +8,7 @@ import NavBar from './components/navBar';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
+import MovieForm from './components/movieForm';
 
 class App extends Component {
   render() { 
@@ -16,6 +17,7 @@ class App extends Component {
       <NavBar />
       <main className="container">
         <Switch>
+          <Route path="/movies/:id" component={MovieForm}></Route>
           <Route path="/movies" component={Movies}></Route>
           <Route path="/customers" component={Customers}></Route>
           <Route path="/rentals" component={Rentals}></Route>
