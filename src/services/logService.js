@@ -1,9 +1,10 @@
 import * as Sentry from '@sentry/browser';
-
+import { sentryBrowserDsn } from "../config.json";
 function init() {
-  Sentry.init({dsn: "https://fb3990b3772f49d680582d4d19cc92ce@o377361.ingest.sentry.io/5199417"});
+  
+  Sentry.init({dsn: sentryBrowserDsn});
 // Set user information, as well as tags and further extras
-Sentry.configureScope(scope => {
+  Sentry.configureScope(scope => {
     scope.setExtra('battery', 0.7);
     scope.setTag('user_mode', 'admin');
     scope.setUser({ id: '4711' });
@@ -18,6 +19,7 @@ Sentry.configureScope(scope => {
 }
 
 function log(error) {
+  console.log("In log service");
   // Capture exceptions, messages or manual events
   //Sentry.captureMessage('Hello, world!');
   Sentry.captureException(new Error(error));

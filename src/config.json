@@ -1,3 +1,4 @@
 {
-  "apiUrl": "http://localhost:3900/api"
+  "apiUrl": "http://localhost:3900/api",
+  "sentryBrowserDsn": "https://fd0afa0db4a24a94ab881c57a41266f0@o377361.ingest.sentry.io/5200027"
 }
