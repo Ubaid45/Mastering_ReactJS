@@ -17,6 +17,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import "react-toastify/dist/ReactToastify.css";
+import ProtectedRoute from './components/common/protectedRoute';
 
 class App extends Component {
   state = {};
@@ -41,11 +42,7 @@ class App extends Component {
           <Route path="/register" component={RegisterForm}></Route>
           <Route path="/login" component={LoginForm}></Route>
           <Route path="/logout" component={Logout}></Route>
-          <Route path="/movies/:id" render={props => {
-            if (!user) return <Redirect to="/login" />
-            return <MovieForm {...props} />;
-          }}>
-          </Route>
+          <ProtectedRoute path="/movies/:id" component={MovieForm} />
           <Route path="/movies" render={props => <Movies {...props} user={this.state.user}/>}></Route>
           <Route path="/customers" component={Customers}></Route>
           <Route path="/rentals" component={Rentals}></Route>
