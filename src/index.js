@@ -7,6 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 import logger from "./services/logService";
 
 logger.init();
+console.log(process.env);
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
