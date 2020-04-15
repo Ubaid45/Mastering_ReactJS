@@ -1,6 +1,6 @@
 This project is deployed on [Heroku](https://desolate-headland-28492.herokuapp.com/movies).
 
-## Features
+### `Features`
 
 I have implemented following feautres in this project:
 * Pagination
@@ -29,4 +29,15 @@ I have implemented following feautres in this project:
 - A logged in user can perform **add** and **update** operations. (The email for normal user : **test@domain.com** and password: **testuser**)
 - An admin user can additionally perform **delete** operation. (The email for admin : **admin@domain.com** and password: **1234abcd**)
 
+### `Basic Concepts`
+- [Basic components](https://github.com/Ubaid45/Basic_ReactJS)
+- [Http Client app](https://github.com/Ubaid45/ReactJS_http-app)
+- [Routing app](https://github.com/Ubaid45/ReactJS_RoutingApp)
 
+
+### `Advanced Concepts`
+- Higher order components
+- Hooks
+- Context
+
+Here is the **[github link](https://github.com/Ubaid45/Advanced-Concepts_ReactJS)** to the practiced advanced concepts.
