@@ -1,8 +1,44 @@
 This project is deployed [here](https://desolate-headland-28492.herokuapp.com/).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+I have implemented following feautres in this project:
+* Pagination
+  * Page change handling
+  * Type checking with Proptypes
+* Filtering
+  * Default props
+  * Selection handling
+* Sorting
+  * Raising sort events
+  * Render sort icons
+* Routing
+  * Route Props
+  * Query string parameters
+  * Redirects
+  * Programmatic navigation
+* Forms
+  * Controlled elements
+  * Validation using Joi(https://www.npmjs.com/package/joi)
+  * Reuseable inputs, tables, forms
+* Calling backend Services : **Node.js**
+  * Http client using **axios** (https://github.com/axios/axios)
+  * Optimistic ad pessimistic updates
+  * Expected vs unexpected exception handling
+  * Exceptions logging using **Sentry** (https://www.npmjs.com/package/@sentry/browser)
+  * Setup **Mongo DB**
+* Authentication and Authorization
+  * Register and login
+  * Authentication via JsonWebToken (https://jwt.io)
+  * Protected API end points and routes
+  * Assign roles
+* Deployment
+  * Set environment variables
+  * Production builds
+  * Deploy backend node service on [Heroku](https://dashboard.heroku.com)
+  * Deploy MongoDB on [cloud](https://cloud.mongodb.com/)
+  * Deploy front-end of ReactJS on [Heroku](https://dashboard.heroku.com) by using [create react app buildpack](https://github.com/mars/create-react-app-buildpack)
+  
 
 ### `npm start`
 
