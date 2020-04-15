@@ -1,4 +1,4 @@
-This project is deployed [here](https://desolate-headland-28492.herokuapp.com/).
+This project is deployed on [Heroku](https://desolate-headland-28492.herokuapp.com/movies).
 
 ## Features
 
@@ -13,7 +13,7 @@ I have implemented following feautres in this project:
   * Reuseable inputs, tables, forms
 * Calling backend Services : **Node.js**
   * Http client using **[axios](https://github.com/axios/axios)**
-  * Optimistic ad pessimistic updates
+  * Optimistic and pessimistic updates
   * Expected vs unexpected exception handling
   * Exceptions logging using **[Sentry](https://www.npmjs.com/package/@sentry/browser)**
   * Setup **Mongo DB**
