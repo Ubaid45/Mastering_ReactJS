@@ -24,11 +24,9 @@ I have implemented following feautres in this project:
   * ReactJS on [Heroku](https://dashboard.heroku.com) by using [create react app buildpack](https://github.com/mars/create-react-app-buildpack)
   
 
-### `npm start`
+### `User roles`
+- A user without login can only view movies.
+- A logged in user can perform **add** and **update** operations. (The email for normal user : **test@domain.com** and password: **testuser**)
+- An admin user can additionally perform **delete** operation. (The email for admin : **admin@domain.com** and password: **1234abcd**)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
