@@ -69,6 +69,19 @@ class Form extends Component {
     );
   };
 
+  renderCheckbox = (name, label, type = "checkbox") => {
+    const { data } = this.state;
+    return (
+      <Input
+        name={name}
+        label={label}
+        value={data[name]}
+        checked={data[name]}
+        type={type}
+      />
+    );
+  };
+
   renderSelect(name, label, options) {
     const { data, errors } = this.state;
 
